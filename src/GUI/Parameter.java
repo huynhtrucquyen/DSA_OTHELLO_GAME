@@ -6,7 +6,7 @@ public class Parameter {
     public static int size = 560;
     public static int stepSize = size / row, width = size / row, height = size / row;
 
-    public static String image = "OOP-rereversi-game-master/Image";
+    public static String image = "Image";
 
     public static String rule = image + "\\gamerules.png\\";
     public static String board = image + "\\board.png\\";
@@ -25,7 +25,7 @@ public class Parameter {
 
     public static String background = image + "\\background.jpg\\";
 
-    public static String music = "OOP-rereversi-game-master/Audio/hitman.wav";
+    public static String music = "Audio/hitman.wav";
 
     public static String player1 = "PLayer 1";
     public static String player2 = "Player 2";

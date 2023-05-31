@@ -18,6 +18,7 @@ out/
 out/production/OOP-rereversi-game/Gui.class
 *.class
 src/META-INF/MANIFEST.MF
+out/production/OOP-rereversi-game/Gui.class
 *.iml
 *.xml
 *.xml
