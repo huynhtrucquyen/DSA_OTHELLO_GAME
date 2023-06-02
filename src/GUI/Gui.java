@@ -17,6 +17,7 @@ public class Gui extends JFrame {
     JMenu gameOptionsMenu = new JMenu(" Game options");
     JMenu musicMenu = new JMenu("Music options");
     JMenu mainMenu = new JMenu("Menu");
+
     JMenuItem exitJMenu = new JMenuItem("Exits");
     JMenuItem newGameJMenu = new JMenuItem("New Games");
     JMenuItem playMusic = new JMenuItem("Play");
@@ -32,7 +33,7 @@ public class Gui extends JFrame {
         music = PlayingAudioFileTest.getInstance();
 
         setMenu();
-        setSize(1000, 700);
+        setSize(1000, 725);
         setVisible(true);
     }
 
@@ -58,7 +59,7 @@ public class Gui extends JFrame {
             else playervsBot.newGame();
 
             music.resumeMusic();
-            System.out.println("new Game");
+            System.out.println("New Game");
         });
     }
 

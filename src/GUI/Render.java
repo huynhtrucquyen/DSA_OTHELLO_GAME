@@ -39,6 +39,7 @@ public class Render extends JPanel {
         renderChess.paintScore(g, p1Score, p2Score);
         renderChess.paintChess(g, board);
         renderChess.paintCurrentMove(g, step);
+        renderChess.playerIcon(g);
     }
 
     public void winner(int id) {

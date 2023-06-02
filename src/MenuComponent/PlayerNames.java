@@ -23,7 +23,7 @@ public class PlayerNames extends JFrame {
     public PlayerNames() {
 
         setIconImage(Toolkit.getDefaultToolkit().getImage(Parameter.logo));
-        setTitle("Reversi PlayerInput");
+        setTitle("Othello");
         initComponents();
 //        setVisible(true);
         
@@ -39,13 +39,15 @@ public class PlayerNames extends JFrame {
     private void initComponents() {
 
         jRadioButton1 = new javax.swing.JRadioButton();
+        saveJbutton = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
+
         player1Jlabel = new javax.swing.JLabel();
         player2Jlabel = new javax.swing.JLabel();
-        titleJlabel = new javax.swing.JLabel();
         name1JTextField = new javax.swing.JTextField();
         name2JTextField = new javax.swing.JTextField();
-        saveJbutton = new javax.swing.JButton();
+
+        titleJlabel = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -72,46 +74,42 @@ public class PlayerNames extends JFrame {
         name1JTextField.setBackground(new java.awt.Color(202, 135, 126));
         name1JTextField.setFont(new java.awt.Font("Tw Cen MT", 1, 20)); // NOI18N
         name1JTextField.setForeground(new java.awt.Color(248, 209, 181));
-        name1JTextField.setText("     Player 1    ");
+        name1JTextField.setText("     Player 1");
         name1JTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 name1JTextFieldActionPerformed(evt);
             }
         });
-
-
         name1JTextField.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (name1JTextField.getText().equals("     Player 1    "))
+                if (name1JTextField.getText().equals("     Player 1"))
                     name1JTextField.setText("");
             }
-
             @Override
             public void focusLost(FocusEvent e) {
                 if (name1JTextField.getText().equals(""))
-                    name1JTextField.setText("     Player 1    ");
+                    name1JTextField.setText("     Player 1");
             }
         });
-
 
         name2JTextField.setBackground(new java.awt.Color(202, 135, 126));
         name2JTextField.setFont(new java.awt.Font("Tw Cen MT", 1, 20)); // NOI18N
         name2JTextField.setForeground(new java.awt.Color(248, 209, 181));
-        name2JTextField.setText("     Player 2    ");
+        name2JTextField.setText("     Player 2");
         name2JTextField.addFocusListener(new FocusListener() {
             @Override
             public void focusGained(FocusEvent e) {
-                if (name2JTextField.getText().equals("     Player 2    "))
+                if (name2JTextField.getText().equals("     Player 2"))
                     name2JTextField.setText("");
             }
-
             @Override
             public void focusLost(FocusEvent e) {
                 if (name2JTextField.getText().equals(""))
-                    name2JTextField.setText("     Player 2    ");
+                    name2JTextField.setText("     Player 2");
             }
         });
+
         saveJbutton.setBackground(new java.awt.Color(255, 169, 182));
         saveJbutton.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         saveJbutton.setForeground(new java.awt.Color(193, 51, 70));
@@ -123,8 +121,8 @@ public class PlayerNames extends JFrame {
         });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(Parameter.image + "\\icons8_autograph_20px_1.png")); // NOI18N
-
         jLabel5.setIcon(new javax.swing.ImageIcon(Parameter.image + "\\icons8_autograph_20px_1.png")); // NOI18N
+
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -134,7 +132,8 @@ public class PlayerNames extends JFrame {
                             .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(240, 240, 240)
                             .addComponent(titleJlabel)
-                            .addGap(232, 232, 232))
+                            .addGap(232, 232, 232)
+                    )
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -159,6 +158,7 @@ public class PlayerNames extends JFrame {
                                 .addComponent(saveJbutton)))))
                 .addContainerGap(108, Short.MAX_VALUE))
         );
+
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()

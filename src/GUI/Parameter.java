@@ -1,7 +1,7 @@
 package GUI;
 
 public class Parameter {
-    public static int xStart = 100, yStart = 50;
+    public static int xStart = 212, yStart = 90;
     public static int row = 8, column = 8;
     public static int size = 560;
     public static int stepSize = size / row, width = size / row, height = size / row;
@@ -26,7 +26,11 @@ public class Parameter {
     public static String background = image + "\\background.jpg\\";
 
     public static String music = "Audio/hitman.wav";
-
-    public static String player1 = "PLayer 1";
+    public static String iconplayer1 = image + "\\player1.png\\";
+    public static String iconplayer2 = image + "\\player2.png\\";
+    public static String iconwhite = image + "\\iconWhite.png\\";
+    public static String iconblack = image + "\\iconBlack.png\\";
+    public static String thinking = image + "\\thinking.png\\";
+    public static String player1 = "Player 1";
     public static String player2 = "Player 2";
 }

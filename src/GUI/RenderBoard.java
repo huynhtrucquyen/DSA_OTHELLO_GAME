@@ -17,7 +17,6 @@ public class RenderBoard {
 
     public void paintBoard(Graphics g) {
 
-
         g.clearRect(0, 0, Parameter.size, Parameter.size);
         BufferedImage imageBoard = null, imageBackground = null;
         try {
@@ -26,7 +25,7 @@ public class RenderBoard {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        g.drawImage(imageBackground, 0, 0, 1000, 700, null);
+        g.drawImage(imageBackground, 0, 0, 1000, 725, null);
         g.drawImage(imageBoard, Parameter.xStart, Parameter.yStart, Parameter.size, Parameter.size, null);
 
     }

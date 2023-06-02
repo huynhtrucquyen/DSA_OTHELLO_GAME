@@ -9,7 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class RenderChess {
+public class RenderChess extends javax.swing.JFrame {
     private Coordinate position = new Coordinate();
     private static RenderChess instance;
 
@@ -17,21 +17,62 @@ public class RenderChess {
 
     }
 
+
+    public void playerIcon(Graphics g) {
+        BufferedImage player1Icon = null, player2Icon = null, iconWhite = null, iconBlack = null;
+        try {
+            player1Icon = ImageIO.read(new File(Parameter.iconplayer1));
+            player2Icon = ImageIO.read(new File(Parameter.iconplayer2));
+            iconWhite = ImageIO.read(new File(Parameter.iconwhite));
+            iconBlack = ImageIO.read(new File(Parameter.iconblack));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        g.drawImage(player1Icon, 15, Parameter.yStart + 160, null);
+        g.drawImage(player2Icon, Parameter.xStart + 640, Parameter.yStart + 160, null);
+        g.drawImage(iconBlack, 15, Parameter.yStart + 270, null);
+        g.drawImage(iconWhite, Parameter.xStart + 630, Parameter.yStart + 270, null);
+
+    }
+
+
     public void paintScore(Graphics g, int p1Score, int p2Score) {
 
         g.setColor(Color.WHITE);
-        g.setFont(new Font("Akzidenz-Grotesk", Font.PLAIN, 20));
-        g.drawString(Parameter.player1 + " score is " + p1Score, Parameter.xStart + 600, Parameter.yStart + 100);
-        g.drawString(Parameter.player2 + " score is " + p2Score, Parameter.xStart + 600, Parameter.yStart + 150);
+        g.setFont(new Font("Tw Cen MT", Font.BOLD, 35));
+
+        g.drawString(Parameter.player1, 45, Parameter.yStart + 30);
+        g.drawString(Parameter.player2, Parameter.xStart + 630, Parameter.yStart + 30);
+
+
+        g.setColor(Color.WHITE);
+        g.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
+
+        g.drawString("" + p1Score, 105, Parameter.yStart + 300);
+        g.drawString("" + p2Score, Parameter.xStart + 720, Parameter.yStart + 300);
 
     }
 
     public void paintCurrentMove(Graphics g, int step) {
-        g.setColor(Color.magenta);
-        g.setFont(new Font("Uni Sans", Font.ITALIC, 20));
-        String move = "White";
-        if (step == 1) move = "Black";
-        g.drawString(move + " move's ", Parameter.xStart + 600, Parameter.yStart + 200);
+        BufferedImage thinking = null;
+        try {
+            thinking = ImageIO.read(new File(Parameter.thinking));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        g.setColor(Color.white);
+        g.setFont(new Font("Uni Sans", Font.BOLD, 35));
+
+        String move = "WHITE";
+        if (step == 1)
+        {   move = "BLACK";
+        g.drawString(move + " TURN ", 380, 50);
+        g.drawImage(thinking, 35, Parameter.yStart + 50, null);
+        }
+        else {
+            g.drawString(move + " TURN ", 420, 50);
+            g.drawImage(thinking, Parameter.xStart + 650, Parameter.yStart + 50, null);}
 
     }
 
@@ -56,9 +97,7 @@ public class RenderChess {
                 image = suggestImage;
             g.drawImage(image, Parameter.xStart + Parameter.stepSize * x,
                     Parameter.yStart + Parameter.stepSize * y, Parameter.width, Parameter.height, null);
-
         }
-
     }
 
     public static RenderChess instance() {
@@ -67,6 +106,5 @@ public class RenderChess {
         }
         return instance;
     }
-
 
 }
