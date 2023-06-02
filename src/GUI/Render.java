@@ -1,6 +1,7 @@
 package GUI;
 
 import Audio.AudioFile;
+import Audio.PlayingAudioFileTest;
 import Core.Coordinate;
 
 import javax.swing.*;
@@ -15,6 +16,7 @@ public class Render extends JPanel {
     public RenderChess renderChess;
 
     public AudioFile music;
+    public PlayingAudioFileTest music1;
 
     public Render() {
         renderBoard = RenderBoard.instance();
@@ -49,22 +51,26 @@ public class Render extends JPanel {
 
         String playerWin = Parameter.player1;
 
-        if (id == 2)
+        if (id == 1)
         {
-        playerWin = Parameter.player2 = "BOT";
-        ImageIcon icon = new ImageIcon(Parameter.lose);
-        JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
-                "Game Over ~ Please try again >.< ", JOptionPane.INFORMATION_MESSAGE, icon);
-        }
-        else {
             playerWin = Parameter.player1;
-            playerWin = Parameter.player2;
-            ImageIcon icon2 = new ImageIcon(Parameter.winner);
-
+            ImageIcon icon = new ImageIcon(Parameter.winner);
             music = AudioFile.getInstance();
             JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
-                    "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon2);
-        }
+                    "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon);
+            music1.pauseMusic();
+        } else if (id == 2) {
+            playerWin = Parameter.player2;
+            ImageIcon icon = new ImageIcon(Parameter.winner);
+            music = AudioFile.getInstance();
+            JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
+                    "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon);
+            music1.pauseMusic();
+        } else {
+            ImageIcon icon2 = new ImageIcon(Parameter.lose);
+            JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
+                    "Game Over ~ Please try again >.< ", JOptionPane.INFORMATION_MESSAGE, icon2);
+            }
     }
 
     public void noMoves(int step) {
