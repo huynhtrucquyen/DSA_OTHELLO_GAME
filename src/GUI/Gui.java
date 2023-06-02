@@ -33,7 +33,7 @@ public class Gui extends JFrame {
         music = PlayingAudioFileTest.getInstance();
 
         setMenu();
-        setSize(1000, 725);
+        setSize(1015, 725);
         setVisible(true);
     }
 
@@ -99,7 +99,6 @@ public class Gui extends JFrame {
         setNewGameJMenu();
         setPlayMusic();
         setStopMusic();
-
 
         musicMenu.add(playMusic);
         musicMenu.add(stopMusic);

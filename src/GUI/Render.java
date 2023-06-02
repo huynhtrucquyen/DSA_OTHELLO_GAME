@@ -13,6 +13,8 @@ public class Render extends JPanel {
     public RenderBoard renderBoard;
     public RenderChess renderChess;
 
+    public Render render;
+
     public Render() {
         renderBoard = RenderBoard.instance();
         renderChess = RenderChess.instance();
@@ -44,10 +46,23 @@ public class Render extends JPanel {
 
     public void winner(int id) {
         String playerWin = Parameter.player1;
-        if (id == 2) playerWin = Parameter.player2;
-        ImageIcon icon = new ImageIcon(Parameter.winner);
+
+        if (id == 2)
+
+        {
+        playerWin = Parameter.player2 = "BOT";
+        ImageIcon icon = new ImageIcon(Parameter.lose);
         JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
-                "Winner yah yah ", JOptionPane.INFORMATION_MESSAGE, icon);
+                "Game Over ~ Please try again >.< ", JOptionPane.INFORMATION_MESSAGE, icon);
+        }
+        else
+        {
+            playerWin = Parameter.player2;
+            ImageIcon icon2 = new ImageIcon(Parameter.winner);
+
+            JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
+                    "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon2);
+        }
     }
 
     public void noMoves(int step) {

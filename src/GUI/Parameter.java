@@ -19,13 +19,16 @@ public class Parameter {
     public static String blackChess = image + "\\blackChess.png\\";
 
     public static String winner = image + "\\Winner-Othello.gif\\";
+    public static String lose = image + "\\gameover.gif\\";
+
     public static String suggest = image + "\\Suggestions.png\\";
     public static String logo = image + "\\Logo.png\\";
     public static String cannotMove = image + "\\cannotMove.gif\\";
 
     public static String background = image + "\\background.jpg\\";
 
-    public static String music = "Audio/hitman.wav";
+    public static String music = "Audio/Chopin.wav";
+    public static String music2 = "Audio/BeethovenVirus.wav";
     public static String iconplayer1 = image + "\\player1.png\\";
     public static String iconplayer2 = image + "\\player2.png\\";
     public static String iconwhite = image + "\\iconWhite.png\\";

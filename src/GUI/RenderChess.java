@@ -29,9 +29,9 @@ public class RenderChess extends javax.swing.JFrame {
             e.printStackTrace();
         }
         g.drawImage(player1Icon, 15, Parameter.yStart + 160, null);
-        g.drawImage(player2Icon, Parameter.xStart + 640, Parameter.yStart + 160, null);
+        g.drawImage(player2Icon, Parameter.xStart + 650, Parameter.yStart + 160, null);
         g.drawImage(iconBlack, 15, Parameter.yStart + 270, null);
-        g.drawImage(iconWhite, Parameter.xStart + 630, Parameter.yStart + 270, null);
+        g.drawImage(iconWhite, Parameter.xStart + 640, Parameter.yStart + 270, null);
 
     }
 
@@ -42,13 +42,13 @@ public class RenderChess extends javax.swing.JFrame {
         g.setFont(new Font("Tw Cen MT", Font.BOLD, 35));
 
         g.drawString(Parameter.player1, 45, Parameter.yStart + 30);
-        g.drawString(Parameter.player2, Parameter.xStart + 630, Parameter.yStart + 30);
+        g.drawString(Parameter.player2, Parameter.xStart + 650, Parameter.yStart + 30);
 
 
         g.setColor(Color.WHITE);
         g.setFont(new Font("Comic Sans MS", Font.BOLD, 50));
 
-        g.drawString("" + p1Score, 105, Parameter.yStart + 300);
+        g.drawString("" + p1Score, 95, Parameter.yStart + 300);
         g.drawString("" + p2Score, Parameter.xStart + 720, Parameter.yStart + 300);
 
     }

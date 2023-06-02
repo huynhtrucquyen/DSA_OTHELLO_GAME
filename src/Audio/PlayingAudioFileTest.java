@@ -1,7 +1,6 @@
 package Audio;
 
 import GUI.Parameter;
-
 import javax.sound.sampled.*;
 import java.io.IOException;
 import java.io.File;
@@ -25,13 +24,11 @@ public class PlayingAudioFileTest {
         }
 
         music.loop(Clip.LOOP_CONTINUOUSLY);
-
     }
 
     public void playMusic() {
         music.start();
         music.loop(Clip.LOOP_CONTINUOUSLY);
-
     }
 
     public void pauseMusic() {
