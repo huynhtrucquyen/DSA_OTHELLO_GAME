@@ -1,5 +1,6 @@
 package GUI;
 
+import Audio.AudioFile;
 import Core.Coordinate;
 
 import javax.swing.*;
@@ -13,7 +14,7 @@ public class Render extends JPanel {
     public RenderBoard renderBoard;
     public RenderChess renderChess;
 
-    public Render render;
+    public AudioFile music;
 
     public Render() {
         renderBoard = RenderBoard.instance();
@@ -45,21 +46,22 @@ public class Render extends JPanel {
     }
 
     public void winner(int id) {
+
         String playerWin = Parameter.player1;
 
         if (id == 2)
-
         {
         playerWin = Parameter.player2 = "BOT";
         ImageIcon icon = new ImageIcon(Parameter.lose);
         JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
                 "Game Over ~ Please try again >.< ", JOptionPane.INFORMATION_MESSAGE, icon);
         }
-        else
-        {
+        else {
+            playerWin = Parameter.player1;
             playerWin = Parameter.player2;
             ImageIcon icon2 = new ImageIcon(Parameter.winner);
 
+            music = AudioFile.getInstance();
             JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
                     "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon2);
         }

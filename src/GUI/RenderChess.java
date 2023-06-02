@@ -41,8 +41,8 @@ public class RenderChess extends javax.swing.JFrame {
         g.setColor(Color.WHITE);
         g.setFont(new Font("Tw Cen MT", Font.BOLD, 35));
 
-        g.drawString(Parameter.player1, 45, Parameter.yStart + 30);
-        g.drawString(Parameter.player2, Parameter.xStart + 650, Parameter.yStart + 30);
+        g.drawString(Parameter.player1, 20, Parameter.yStart + 30);
+        g.drawString(Parameter.player2, Parameter.xStart + 645, Parameter.yStart + 30);
 
 
         g.setColor(Color.WHITE);

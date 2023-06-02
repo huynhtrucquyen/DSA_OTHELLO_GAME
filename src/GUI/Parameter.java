@@ -1,7 +1,7 @@
 package GUI;
 
 public class Parameter {
-    public static int xStart = 212, yStart = 90;
+    public static int xStart = 220, yStart = 90;
     public static int row = 8, column = 8;
     public static int size = 560;
     public static int stepSize = size / row, width = size / row, height = size / row;
