@@ -13,7 +13,7 @@ public class Options extends javax.swing.JFrame {
      */
     public Options() {
         initComponents();
-        setTitle("Reversi");
+        setTitle("Othello");
         setIconImage(Toolkit.getDefaultToolkit().getImage(Parameter.logo));
         setVisible(true);
     }
