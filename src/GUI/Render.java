@@ -58,14 +58,14 @@ public class Render extends JPanel {
             music = AudioFile.getInstance();
             JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
                     "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon);
-            music1.pauseMusic();
+            music1.extMusic();
         } else if (id == 2) {
             playerWin = Parameter.player2;
             ImageIcon icon = new ImageIcon(Parameter.winner);
             music = AudioFile.getInstance();
             JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
                     "Winner yah yah !!!", JOptionPane.INFORMATION_MESSAGE, icon);
-            music1.pauseMusic();
+            music1.extMusic();
         } else {
             ImageIcon icon2 = new ImageIcon(Parameter.lose);
             JOptionPane.showMessageDialog(null, "The winner is " + playerWin,
