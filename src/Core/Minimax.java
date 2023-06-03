@@ -141,14 +141,15 @@ public class Minimax {
         //check up
         for (int i = x-1 ; i >= 1 ; i--) {
             if (arr[i][y] == opponent) {
-                check ^= 1;
+                check = 0;
             }
         }
 
         //check down
         for (int i = 1 ; i < x ; i++) {
             if (arr[i][y] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
         ret += check;
@@ -157,14 +158,16 @@ public class Minimax {
         check = 1;
         for (int i = 1 ; i < y ; i++) {
             if (arr[x][i] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
 
         //check right
         for (int i = y + 1 ; i <= column ; i++) {
             if (arr[x][i] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
 
@@ -173,13 +176,15 @@ public class Minimax {
         //check up-right
         for (int i = 1 ; x - i >= 1 && y + i <= column ; i++) {
             if (arr[x - i][y + i] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
         // check down-left
         for (int i = 1 ; x + i <= row && y - i >= 1 ; i++) {
             if (arr[x + i][y - i] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
 
@@ -189,14 +194,16 @@ public class Minimax {
         //check down-right
         for (int i = 1 ; x + i <= row && y + i <= column ; i++) {
             if (arr[x+i][y+i] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
 
         //check up-left
         for (int i = 1 ; x - i >= 1 && y - i >= 1 ; i++) {
             if (arr[x-i][y-i] == opponent) {
-                check ^= 1;
+                check = 0;
+                break;
             }
         }
 
@@ -239,14 +246,14 @@ public class Minimax {
 
         for (int i = 1 ; i <= row ; i++) {
             for (int j = 1 ; j <= column ; j++) {
-                if (arr[i][j] == 0) {
+                if (arr[i][j] == -1) {
                     continue;
                 }
                 stability += stability(arr, i, j);
             }
         }
 
-        return -(count + mobility * 20 + corner * 10 + stability * 20);
+        return -(count + mobility * 5 + corner * 10 + stability * 20);
     }
 
     public cond getOptimalMove(int[][] board, int x, int y) {
